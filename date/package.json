@@ -1,0 +1,64 @@
+{
+  "version": "0.1.13",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "deploy": "npm version patch && npm publish --access public"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "@paralax-ui/date",
+  "author": "Gustavo Elesbão",
+  "module": "dist/date.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/date.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/date.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^8.2.4",
+    "@types/react": "^18.2.12",
+    "@types/react-dom": "^18.2.4",
+    "husky": "^8.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "size-limit": "^8.2.4",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.5.3",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "date-fns": "^2.30.0"
+  }
+}
